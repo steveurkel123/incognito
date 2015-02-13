@@ -1,0 +1,10 @@
+services:
+    steveurkel.incognito.listener:
+        class: steveurkel\incognito\event\post_listener
+        arguments:
+            - @config
+            - @template
+            - @user
+            - @request
+        tags:
+            - { name: event.listener }
