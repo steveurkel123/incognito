@@ -25,7 +25,7 @@ class release_0_9_0 extends \phpbb\db\migration\migration
 		return array(
 			'add_columns'	=> array(
 				$this->table_prefix . 'posts'	=> array(
-					'real_poster_id'    => array('UINT:8', 0),
+					'real_poster_id'    => array('UINT:8', null),
 				),
 			),
 		);
