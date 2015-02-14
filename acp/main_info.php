@@ -23,5 +23,3 @@ class main_info
 		);
 	}
 }
-
-?>

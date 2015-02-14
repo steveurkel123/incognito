@@ -18,5 +18,3 @@ $lang = array_merge($lang, array(
 		'ACP_INCOGNITO_GOODBYE'			=> 'Post as anonymous active?',
 		'ACP_INCOGNITO_SETTING_SAVED'	=> 'Settings have been saved successfully!',
 ));
-
-?>

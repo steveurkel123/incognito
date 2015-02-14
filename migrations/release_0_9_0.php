@@ -62,4 +62,3 @@ class release_0_9_0 extends \phpbb\db\migration\migration
 		);
 	}
 }
-?>

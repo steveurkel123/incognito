@@ -18,5 +18,3 @@ $lang = array_merge($lang, array(
 		'ACP_INCOGNITO_GOODBYE'			=> 'Anonymes Schreiben aktiv?',
 		'ACP_INCOGNITO_SETTING_SAVED'	=> 'Einstellungen wurden erfolgreich gespeichert!',
 ));
-
-?>

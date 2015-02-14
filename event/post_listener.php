@@ -103,4 +103,3 @@ class post_listener implements EventSubscriberInterface
 		$event['sql_data'] = $post_sql_data;		
 	}
 }
-?>
