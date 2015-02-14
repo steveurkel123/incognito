@@ -17,4 +17,6 @@ $lang = array_merge($lang, array(
 		'ACP_INCOGNITO'					=> 'Einstellungen',
 		'ACP_INCOGNITO_GOODBYE'			=> 'Anonymes Schreiben aktiv?',
 		'ACP_INCOGNITO_SETTING_SAVED'	=> 'Einstellungen wurden erfolgreich gespeichert!',
+		'ACP_INCOGNITO_NAME'			=> 'Angezeigter Benutzername',
+		'ACP_INCOGNITO_NAME_EXPLAIN'	=> 'Wenn dieses Feld gefüllt ist, wird der Wert als Benutzername am Beitrag angezeigt. Wird das Feld leergelassen wird der Standardwert angezeigt.',
 ));

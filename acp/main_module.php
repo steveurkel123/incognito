@@ -20,6 +20,7 @@ class main_module
 		$this->tpl_name = 'incognito_body';
 		$this->page_title = $user->lang('ACP_INCOGNITO_TITLE');
 		add_form_key('steveurkel/incognito');
+		
 		if ($request->is_set_post('submit'))
 		{
 			if (!check_form_key('steveurkel/incognito'))
@@ -27,11 +28,14 @@ class main_module
 				trigger_error('FORM_INVALID');
 			}
 			$config->set('incognito_enabled', $request->variable('incognito_enabled', 0));
+			$config->set('incognito_name', $request->variable('incognito_name', ''));
 			trigger_error($user->lang('ACP_INCOGNITO_SETTING_SAVED') . adm_back_link($this->u_action));
 		}
+		
 		$template->assign_vars(array(
 				'U_ACTION'				=> $this->u_action,
 				'INCOGNITO_ENABLED'		=> $config['incognito_enabled'],
+				'S_INCOGNITO_NAME'		=> $config['incognito_name'],
 		));
 	}
 }

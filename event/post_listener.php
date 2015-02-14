@@ -73,10 +73,10 @@ class post_listener implements EventSubscriberInterface
 			//set all poster info to ANONYMOUS - store the real poster id for admin tracking reasons
 			$post_sql_data[POSTS_TABLE]['sql']['real_poster_id'] = $post_sql_data[POSTS_TABLE]['sql']['poster_id'];
 			$post_sql_data[POSTS_TABLE]['sql']['poster_id'] = ANONYMOUS;
-			$post_sql_data[POSTS_TABLE]['sql']['post_username'] = '';
+			$post_sql_data[POSTS_TABLE]['sql']['post_username'] = ($this->config['incognito_name'] != '' ? $this->config['incognito_name'] : '');
 			
 			$post_sql_data[TOPICS_TABLE]['sql']['topic_last_poster_id'] = ANONYMOUS;
-			$post_sql_data[TOPICS_TABLE]['sql']['topic_last_poster_name'] = '';
+			$post_sql_data[TOPICS_TABLE]['sql']['topic_last_poster_name'] = ($this->config['incognito_name'] != '' ? $this->config['incognito_name'] : '');
 			$post_sql_data[TOPICS_TABLE]['sql']['topic_last_poster_colour'] = '';
 			
 			//in case of first post of topic (new/edit) set poster info to ANONYMOUS
@@ -87,8 +87,11 @@ class post_listener implements EventSubscriberInterface
 				case 'post' :
 					$post_sql_data[TOPICS_TABLE]['sql']['topic_poster'] = ANONYMOUS;
 					//$post_sql_data[TOPICS_TABLE]['sql']['topic_first_post_id'] = ANONYMOUS;
-					$post_sql_data[TOPICS_TABLE]['sql']['topic_first_poster_name'] = '';
+					$post_sql_data[TOPICS_TABLE]['sql']['topic_first_poster_name'] = ($this->config['incognito_name'] != '' ? $this->config['incognito_name'] : '');
 					$post_sql_data[TOPICS_TABLE]['sql']['topic_first_poster_colour'] = '';
+					break;
+					
+				default : //nothing to do here
 					break;
 			}
 			
@@ -97,7 +100,10 @@ class post_listener implements EventSubscriberInterface
 			
 			//reset user data for now
 			$this->user->data['user_id'] = ANONYMOUS;
-			$this->user->data['user_colour'] = '';			
+			$this->user->data['user_colour'] = '';	
+			$this->user->data['is_registered'] = false;
+			
+			$event['username'] = $this->config['incognito_name'] != '' ? $this->config['incognito_name'] : '';
 		}
 		
 		$event['sql_data'] = $post_sql_data;		
