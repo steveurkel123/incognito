@@ -23,7 +23,7 @@ class release_0_9_1 extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-				array('config.add', array('incognito_name', '')),				
+				array('config.add', array('incognito_name', '')),
 		);
 	}
 }

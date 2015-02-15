@@ -1,4 +1,12 @@
 <?php
+/**
+ *
+ * @package phpBB Extension - Incognito
+ * @copyright (c) 2015 steveurkel
+ * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+ *
+ */
+
 if (!defined('IN_PHPBB'))
 {
 	exit;
@@ -10,7 +18,7 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-		'ANONYM'           				=> 'Beitrag anonym schreiben',
+		'ANONYM'						=> 'Beitrag anonym schreiben',
 		'ANONYM_EXPLAIN'				=> 'Kreuze das Feld an, wenn Du anonym schreiben möchtest. Dies kann nicht rückgängig gemacht werden, wenn der Beitrag abgesendet wurde.',
 		
 		'ACP_INCOGNITO_TITLE'			=> 'Incognito Module',

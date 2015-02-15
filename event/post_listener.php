@@ -18,9 +18,9 @@ class post_listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-				'core.user_setup'                    => 'load_language_on_setup',
-				'core.posting_modify_template_vars'	 => 'modify_posting_template',
-				'core.submit_post_modify_sql_data'   => 'modify_post_sql_data',
+				'core.user_setup'					=> 'load_language_on_setup',
+				'core.posting_modify_template_vars'	=> 'modify_posting_template',
+				'core.submit_post_modify_sql_data'	=> 'modify_post_sql_data',
 		);
 	}
 	
@@ -30,7 +30,7 @@ class post_listener implements EventSubscriberInterface
 	 * @param \phpbb\config\config		$config		Config object
 	 * @param \phpbb\template\template	$template	Template object
 	 * @param \phpbb\user				$user		User object
-	 * @param \phpbb\request\request    $request	Request object
+	 * @param \phpbb\request\request	$request	Request object
 	 */
 	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user, \phpbb\request\request $request)
 	{
@@ -106,6 +106,6 @@ class post_listener implements EventSubscriberInterface
 			$event['username'] = $this->config['incognito_name'] != '' ? $this->config['incognito_name'] : '';
 		}
 		
-		$event['sql_data'] = $post_sql_data;		
+		$event['sql_data'] = $post_sql_data;
 	}
 }

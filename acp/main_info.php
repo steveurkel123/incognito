@@ -18,7 +18,7 @@ class main_info
 				'title'		=> 'INCOGNITO_TITLE',
 				'version'	=> '0.9.0',
 				'modes'		=> array(
-						'settings'	=> array('title' => 'Post as anonymous', 'auth' => 'ext_steveurkel/incognito && acl_a_board', 'cat' => array('INCOGNITO_TITLE')),
+					'settings'	=> array('title' => 'Post as anonymous', 'auth' => 'ext_steveurkel/incognito && acl_a_board', 'cat' => array('INCOGNITO_TITLE')),
 				),
 		);
 	}
